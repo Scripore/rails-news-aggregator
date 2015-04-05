@@ -25,7 +25,7 @@
 	}
 }
 
-.list-group-item a:hover :focus {
-    color:black;/*color turns white if not changed*/
-    background: none;           
-}
+
+
+.navbar-nav > li > a {padding-top:10px !important; padding-bottom:10px !important;}
+.navbar {min-height:4px !important}
