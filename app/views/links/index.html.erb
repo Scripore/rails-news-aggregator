@@ -1,0 +1,26 @@
+
+</br>
+<div id="threadtext" class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+       News aggregator for artificial intelligence, machine learning and more.
+    </div>
+</br>
+
+<ul class="list-group">
+    <div id="threadtext"
+      <div class="list-group">
+        <% @links.each do |link| %>
+          <li class="list-group-item">
+          <%= link_to(link.title.titleize, link.url) %></br>
+          score: <%= link.score%> comments: <%= link_to(link.num_comments, link.permalink)%> created at: (<%= Time.at(link.created).to_formatted_s(:short)%>) 
+                 
+          </br>
+
+          
+          </li>
+        <% end %>
+      </div>
+    </div>
+</ul>
+
+
