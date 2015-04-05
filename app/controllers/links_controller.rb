@@ -6,23 +6,23 @@ before_action :authorized_user, only: [:edit, :update, :destroy]
   # GET /links.json
   def index
 
-#    Link.destroy_all
-    #client = RedditKit::Client.new 'myrailsproject99', 'myrailsproject99!!'
+    Link.destroy_all
+    client = RedditKit::Client.new 'myrailsproject99', 'myrailsproject99!!'
 
-#rr = client.search("artificial intelligence", {:time => :month, :limit => 100})
-#rr.results.sort_by {|el| el.num_comments }.reverse.each do |thread|
-  #link = Link.new
-  #link.url = thread.url
-  #link.title = thread.title
-  #link.user = User.all.first
-  #link.score = thread.score
-  #link.permalink = thread.permalink
-  #link.created = thread.attributes[:created_utc]
-    #link.num_comments = thread.num_comments
+rr = client.search("artificial intelligence", {:time => :month, :limit => 100})
+rr.results.sort_by {|el| el.num_comments }.reverse.each do |thread|
+  link = Link.new
+  link.url = thread.url
+  link.title = thread.title
+  link.user = User.all.first
+  link.score = thread.score
+  link.permalink = thread.permalink
+  link.created = thread.attributes[:created_utc]
+    link.num_comments = thread.num_comments
 
 
-  #link.save
-#end
+  link.save
+end
 
 
     @links = Link.all
