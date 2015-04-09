@@ -30,3 +30,23 @@
 .navbar {min-height:4px !important}
 
 
+
+
+.field input {
+    color: #000000;
+    font-size: 14px;
+    padding: 20px;
+    border: 1px solid #000000;
+   
+  margin-left: 8.5cm;
+  margin-right: 2cm;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 6px #9ecaed;
+}
+
+.field input:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 15px #9ecaed;
+}

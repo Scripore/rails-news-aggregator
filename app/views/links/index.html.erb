@@ -1,10 +1,27 @@
 
 </br>
-<div id="threadtext" class="alert alert-warning">
+    <div id="threadtext" class="alert alert-warning">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
        News aggregator for artificial intelligence, machine learning and more.
     </div>
-</br>
+    </br>
+
+
+    <div class="collapse navbar-collapse">
+    <div id="content2">
+      <%= form_for('search_phrase') do |f| %>
+        <div class="field">
+          <%= f.text_field :title, :placeholder => 'Enter in a search phrase (e.g., programming). ', :size => 60%></br>
+          <%= @error if @error %>
+          </div>
+
+    <% end %>
+  </div>
+</div>
+
+
+
+
 
 <ul class="list-group">
     <div id="threadtext"

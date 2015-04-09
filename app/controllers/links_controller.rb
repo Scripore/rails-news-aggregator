@@ -1,15 +1,22 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
-before_filter :authenticate_user!, :except => [:index, :show]
+
 before_action :authorized_user, only: [:edit, :update, :destroy]
   # GET /links
   # GET /links.json
   def index
 
+    if search_phrase = params['search_phrase'].nil?
+      search_phrase = "artificial intelligence"
+    else
+      search_phrase = params['search_phrase']['title']
+    end
+    
+    
     Link.destroy_all
     client = RedditKit::Client.new 'myrailsproject99', 'myrailsproject99!!'
 
-rr = client.search("artificial intelligence", {:time => :month, :limit => 100})
+rr = client.search(search_phrase, {:time => :month, :limit => 100})
 rr.results.sort_by {|el| el.num_comments }.reverse.each do |thread|
   link = Link.new
   link.url = thread.url
@@ -24,7 +31,7 @@ rr.results.sort_by {|el| el.num_comments }.reverse.each do |thread|
   link.save
 end
 
-
+    @link = Link.new
     @links = Link.all
   end
 
@@ -45,17 +52,9 @@ end
   # POST /links
   # POST /links.json
   def create
-    @link = current_user.links.build(link_params)
-
-    respond_to do |format|
-      if @link.save
-        format.html { redirect_to @link, notice: 'Link was successfully created.' }
-        format.json { render :show, status: :created, location: @link }
-      else
-        format.html { render :new }
-        format.json { render json: @link.errors, status: :unprocessable_entity }
-      end
-    end
+    binding.pry
+    @links = Link.all
+    render 'links/index'
   end
 
   # PATCH/PUT /links/1

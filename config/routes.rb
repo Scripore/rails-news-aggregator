@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  post 'links' => 'links#index'
   resources :links
   root to: "links#index"
 
