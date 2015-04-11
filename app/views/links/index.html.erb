@@ -2,7 +2,7 @@
 </br>
     <div id="threadtext" class="alert alert-warning">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
-       News aggregator for artificial intelligence, machine learning and more.
+       Simple Reddit Search Engine.
     </div>
     </br>
 
@@ -29,7 +29,7 @@
       <div class="list-group">
         <% @links.each do |link| %>
           <li class="list-group-item">
-          <%= link_to(link.title.titleize, link.url) %> (<%= link.subreddit %>)</br>
+          <%= link_to(link.title.titleize, link.url) %> (<%= link_to(link.subreddit, "http://www.reddit.com/r/#{link.subreddit}") %>)</br>
           score: <%= link.score%> comments: <%= link_to(link.num_comments, link.permalink)%> time: <%=time_ago_in_words(Time.at(link.created))%> ago 
                  
           </br>
@@ -41,4 +41,7 @@
     </div>
 </ul>
 
-
+Search History Log
+<% SavedSearch.all.each do |search| %>
+  <%= search.title %></br>
+<% end %>

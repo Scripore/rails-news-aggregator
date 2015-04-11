@@ -13,6 +13,7 @@ class LinksController < ApplicationController
       if params['search_phrase'].nil?
          search_phrase_array << "artificial intelligence"
       else
+        SavedSearch.create(:title =>  params['search_phrase']['title'])
         if params['search_phrase']['title'].include? ','
           search_phrase_array = params['search_phrase']['title'].split(',')
         else
