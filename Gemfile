@@ -6,6 +6,7 @@ gem 'rails', '4.2.0'
 gem 'redditkit', '~> 1.0.2'
 gem 'bootstrap-sass'
 gem 'devise'
+gem "chartkick"
 # Use sqlite3 as the database for Active Record
 #
 #
