@@ -22,16 +22,6 @@ class LinksController < ApplicationController
 
 
 
-
-
-
-
-
-
-
-
-
-
     Link.destroy_all
     search_phrase_array.each do |search_phrase|
       client = RedditKit::Client.new 'myrailsproject99', 'myrailsproject99!!'
@@ -41,7 +31,7 @@ class LinksController < ApplicationController
         link = Link.new
         link.url = thread.url
         link.title = thread.title
-        link.user = User.all.first
+        link.subreddit = thread.subreddit
         link.score = thread.score
         link.permalink = thread.permalink
         link.created = thread.attributes[:created_utc]

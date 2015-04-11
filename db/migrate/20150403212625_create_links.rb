@@ -4,6 +4,7 @@ class CreateLinks < ActiveRecord::Migration
       t.string :title
       t.string :url
       t.string :permalink
+      t.string :subreddit
       
       t.integer :user_id, :score, :num_comments, :created
 

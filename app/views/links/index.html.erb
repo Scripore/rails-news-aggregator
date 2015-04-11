@@ -19,7 +19,8 @@
   </div>
 </div>
 
-
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<%= pie_chart Link.group(:subreddit).count %>
 
 
 
@@ -28,7 +29,7 @@
       <div class="list-group">
         <% @links.each do |link| %>
           <li class="list-group-item">
-          <%= link_to(link.title.titleize, link.url) %></br>
+          <%= link_to(link.title.titleize, link.url) %> (<%= link.subreddit %>)</br>
           score: <%= link.score%> comments: <%= link_to(link.num_comments, link.permalink)%> time: <%=time_ago_in_words(Time.at(link.created))%> ago 
                  
           </br>
@@ -40,5 +41,4 @@
     </div>
 </ul>
 
-<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<%= line_chart User.group_by_day(:created_at).count %>
+

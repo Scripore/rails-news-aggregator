@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150403212919) do
     t.string   "title"
     t.string   "url"
     t.string   "permalink"
+    t.string   "subreddit"
     t.integer  "user_id"
     t.integer  "score"
     t.integer  "num_comments"
