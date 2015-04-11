@@ -8,16 +8,15 @@ gem 'redditkit', '~> 1.0.2'
 gem 'bootstrap-sass'
 gem 'devise'
 gem "chartkick"
+  gem 'pg'
 # Use sqlite3 as the database for Active Record
 #
 #
 group :development, :test do
   gem 'sqlite3'
-  gem 'pg'
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
