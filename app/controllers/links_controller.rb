@@ -26,7 +26,7 @@ class LinksController < ApplicationController
     search_phrase_array.each do |search_phrase|
       client = RedditKit::Client.new 'myrailsproject99', 'myrailsproject99!!'
 
-      rr = client.search(search_phrase, {:time => :month, :limit => 10})
+      rr = client.search(search_phrase, {:time => :month, :limit => 20})
       rr.results.sort_by {|el| el.num_comments }.reverse.each do |thread|
         link = Link.new
         link.url = thread.url
