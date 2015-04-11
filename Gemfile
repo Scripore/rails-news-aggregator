@@ -8,7 +8,7 @@ gem 'redditkit', '~> 1.0.2'
 gem 'bootstrap-sass'
 gem 'devise'
 gem "chartkick"
-  gem 'pg'
+gem 'pg'
 # Use sqlite3 as the database for Active Record
 #
 #
