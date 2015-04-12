@@ -2,7 +2,7 @@
 </br>
     <div id="threadtext" class="alert alert-warning">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
-       A Simple Reddit Search Engine.
+       A Simple Reddit Search Engine. You're wrong again, Lezou.
     </div>
    
 
@@ -27,7 +27,7 @@
 </div>
 
 <br>
-Most Recent Searches:<br>
+<strong>Most Recent Searches:</strong><br>
 <% SavedSearch.last(11).reverse.each do |search| %>
   <%= link_to(search.title.titleize,  links_path(:search_phrase => { :title => search.title })) %>
   </br>
