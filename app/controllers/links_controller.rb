@@ -9,7 +9,6 @@ class LinksController < ApplicationController
     search_phrase_array = []
 
 
-
       if params['search_phrase'].nil?
          search_phrase_array << "artificial intelligence"
       else
