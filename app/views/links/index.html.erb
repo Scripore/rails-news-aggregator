@@ -39,7 +39,7 @@ Most Recent Searches:<br>
       <div class="list-group">
         <% @links.each do |link| %>
           <li class="list-group-item">
-          <%= link_to(link.title.titleize, link.url) %> (<%= link_to(link.subreddit, "http://www.reddit.com/r/#{link.subreddit}") %>)</br>
+          <%= link_to(link.title, link.url) %> (<%= link_to(link.subreddit, "http://www.reddit.com/r/#{link.subreddit}") %>)</br>
           score: <%= link.score%> comments: <%= link_to(link.num_comments, link.permalink)%> time: <%=time_ago_in_words(Time.at(link.created))%> ago 
                  
           </br>
