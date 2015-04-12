@@ -4,7 +4,7 @@
         <a href="#" class="close" data-dismiss="alert">&times;</a>
        Simple Reddit Search Engine.
     </div>
-    </br>
+   
 
 
     <div class="collapse navbar-collapse">
@@ -19,9 +19,19 @@
   </div>
 </div>
 
+<div class='graph'>
+
+<div id='graph'>
 <%= javascript_include_tag "/highcharts.js", "chartkick" %>
 <%= pie_chart Link.group(:subreddit).count %>
+</div>
 
+<br>
+Most Recent Searches:<br>
+<% SavedSearch.last(11).reverse.each do |search| %>
+  <%= search.title.titleize %></br>
+<% end %>
+</div>
 
 
 <ul class="list-group">
@@ -41,7 +51,4 @@
     </div>
 </ul>
 
-Search History Log
-<% SavedSearch.all.each do |search| %>
-  <%= search.title %></br>
-<% end %>
+
